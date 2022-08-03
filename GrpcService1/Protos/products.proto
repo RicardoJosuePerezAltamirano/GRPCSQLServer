@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+option csharp_namespace = "GrpcService1";
+package domain;
+
+service Products{
+	rpc GetProducts (ProductsRequest) returns (ProductsDTO);
+}
+
+message ProductsRequest{
+	string name =1;
+	int32 price=2;
+}
+
+message ProductsDTO{
+	int32 productid=1;
+}

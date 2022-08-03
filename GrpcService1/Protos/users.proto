@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+option csharp_namespace = "GrpcService1";
+package domain;
+
+service Users{
+	rpc GetUsers (UsersRequest) returns (ListUsers);
+}
+
+message UsersRequest{
+	
+	int32 id=1;
+}
+
+message UsersDTO{
+	int32 id=1;
+	string name=2;
+}
+message ListUsers{
+	repeated UsersDTO data=1;
+}
